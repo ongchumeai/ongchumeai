@@ -77,9 +77,14 @@ function CtaLink({ label = "ĐĂNG KÝ NGAY" }: { label?: string }) {
 function HomePage() {
   return (
     <main className="overflow-hidden bg-background text-foreground">
-      <section className="hero-wash px-5 pb-16 pt-11 sm:pt-14">
-        <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
-          <div className="eyebrow"><span aria-hidden="true">•</span> HUẤN LUYỆN CẤP TỐC 1 LẦN DUY NHẤT</div>
+      <section className="midautumn-sky hero-wash px-5 pb-16 pt-11 sm:pt-14">
+        <div className="midautumn-stars" aria-hidden="true" />
+        <div className="midautumn-moon" aria-hidden="true" />
+        <div className="lantern" style={{ left: "8%", top: "22%", animationDelay: "0s" }} aria-hidden="true" />
+        <div className="lantern" style={{ left: "86%", top: "30%", width: "2rem", height: "2.6rem", animationDelay: "1.2s" }} aria-hidden="true" />
+        <div className="lantern" style={{ left: "20%", top: "52%", width: "2.2rem", height: "2.9rem", animationDelay: "2.4s" }} aria-hidden="true" />
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center">
+          <div className="eyebrow"><span aria-hidden="true">🌕</span> HUẤN LUYỆN CẤP TỐC 1 LẦN DUY NHẤT</div>
           <h1 className="mt-5 max-w-4xl text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
             NUÔI AGENT CÀY THAY MÌNH <span className="text-primary">24/7</span>
           </h1>
