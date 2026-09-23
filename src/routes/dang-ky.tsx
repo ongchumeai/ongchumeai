@@ -6,7 +6,7 @@ export const Route = createFileRoute("/dang-ky")({
   head: () => ({
     meta: [
       { title: "Đăng Ký Nhận Vé | KOL AI Workshop" },
-      { name: "description", content: "Đăng ký vé tham gia huấn luyện cấp tốc KOL AI cùng Phong Menly." },
+      { name: "description", content: "Đăng ký vé tham gia huấn luyện cấp tốc KOL AI cùng Duy Hưng." },
       { property: "og:title", content: "Đăng Ký Nhận Vé KOL AI Workshop" },
       { property: "og:description", content: "Nhận vé, tài liệu, phần hỏi đáp trực tiếp và bản phát lại trong 7 ngày." },
       { property: "og:type", content: "website" },
@@ -25,13 +25,17 @@ const ticketBenefits = [
 
 function RegistrationPage() {
   return (
-    <main className="min-h-screen bg-soft px-5 py-10 sm:py-14">
-      <div className="mx-auto max-w-3xl">
+    <main className="midautumn-sky min-h-screen px-5 py-10 sm:py-14">
+      <div className="midautumn-stars" aria-hidden="true" />
+      <div className="midautumn-moon" aria-hidden="true" />
+      <div className="lantern" style={{ left: "6%", top: "16%", animationDelay: "0.4s" }} aria-hidden="true" />
+      <div className="lantern" style={{ left: "90%", top: "22%", width: "2rem", height: "2.6rem", animationDelay: "1.8s" }} aria-hidden="true" />
+      <div className="relative mx-auto max-w-3xl">
         <Link to="/" className="inline-flex items-center gap-2 font-semibold text-muted-foreground transition-colors hover:text-primary">
           <ArrowLeft className="size-4" /> Quay lại trang chủ
         </Link>
         <header className="mt-8 text-center">
-          <div className="eyebrow">HUẤN LUYỆN CẤP TỐC KOL AI</div>
+          <div className="eyebrow">🌕 HUẤN LUYỆN CẤP TỐC KOL AI</div>
           <h1 className="mt-5 text-4xl font-black sm:text-5xl">Đăng Ký Nhận Vé</h1>
           <p className="mt-3 text-lg font-semibold text-primary">Huấn luyện cấp tốc KOL AI – KHAI LỘC</p>
         </header>

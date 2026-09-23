@@ -26,30 +26,38 @@
   --color-ring: var(--ring);
   --color-soft: var(--soft);
   --color-warning: var(--warning);
+  --color-lantern: var(--lantern);
+  --color-moon: var(--moon);
   --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.995 0.004 65);
-  --foreground: oklch(0.145 0.01 55);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0.01 55);
-  --primary: oklch(0.66 0.22 43);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.965 0.025 54);
-  --secondary-foreground: oklch(0.27 0.03 48);
-  --muted: oklch(0.965 0.012 60);
-  --muted-foreground: oklch(0.49 0.018 52);
-  --accent: oklch(0.93 0.055 50);
-  --accent-foreground: oklch(0.55 0.19 40);
-  --border: oklch(0.89 0.027 53);
-  --input: oklch(0.89 0.027 53);
-  --ring: oklch(0.66 0.22 43);
-  --soft: oklch(0.985 0.015 63);
-  --warning: oklch(0.74 0.17 77);
-  --shadow-orange: 0 0 24px color-mix(in oklab, var(--primary) 55%, transparent);
-  --shadow-card: 0 10px 28px color-mix(in oklab, var(--primary) 9%, transparent);
+
+  /* Navy night-sky base */
+  --background: oklch(0.17 0.045 255);
+  --foreground: oklch(0.96 0.012 230);
+  --card: oklch(0.23 0.05 258);
+  --card-foreground: oklch(0.96 0.012 230);
+  --primary: oklch(0.82 0.14 78);          /* warm gold — lantern glow + CTA */
+  --primary-foreground: oklch(0.16 0.04 255);
+  --secondary: oklch(0.30 0.05 258);
+  --secondary-foreground: oklch(0.90 0.02 80);
+  --muted: oklch(0.27 0.04 258);
+  --muted-foreground: oklch(0.78 0.03 220);
+  --accent: oklch(0.40 0.13 22);            /* deep lantern red */
+  --accent-foreground: oklch(0.95 0.02 80);
+  --border: oklch(0.34 0.04 258);
+  --input: oklch(0.34 0.04 258);
+  --ring: oklch(0.82 0.14 78);
+  --soft: oklch(0.20 0.048 260);
+  --warning: oklch(0.82 0.14 78);
+
+  --lantern: oklch(0.72 0.17 48);          /* warm orange lantern */
+  --moon: oklch(0.92 0.06 85);             /* pale moon gold */
+
+  --shadow-gold: 0 0 26px color-mix(in oklab, var(--primary) 45%, transparent);
+  --shadow-card: 0 12px 30px color-mix(in oklab, #000 45%, transparent);
 }
 
 @layer base {
@@ -65,39 +73,113 @@
   a { text-decoration: none; }
 }
 
+/* ---------- Mid-Autumn night-sky backdrop ---------- */
+@utility midautumn-sky {
+  position: relative;
+  background:
+    radial-gradient(circle at 82% 14%, color-mix(in oklab, var(--moon) 38%, transparent) 0%, transparent 22%),
+    radial-gradient(circle at 50% 0%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 45%),
+    linear-gradient(180deg, oklch(0.15 0.05 258), oklch(0.19 0.045 255));
+}
+
+@utility midautumn-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, color-mix(in oklab, var(--moon) 80%, transparent), transparent),
+    radial-gradient(1px 1px at 28% 48%, color-mix(in oklab, var(--moon) 60%, transparent), transparent),
+    radial-gradient(1.5px 1.5px at 64% 18%, color-mix(in oklab, var(--moon) 85%, transparent), transparent),
+    radial-gradient(1px 1px at 80% 40%, color-mix(in oklab, var(--moon) 70%, transparent), transparent),
+    radial-gradient(1px 1px at 44% 70%, color-mix(in oklab, var(--moon) 55%, transparent), transparent),
+    radial-gradient(1.5px 1.5px at 92% 60%, color-mix(in oklab, var(--moon) 80%, transparent), transparent),
+    radial-gradient(1px 1px at 18% 82%, color-mix(in oklab, var(--moon) 50%, transparent), transparent),
+    radial-gradient(1px 1px at 70% 86%, color-mix(in oklab, var(--moon) 65%, transparent), transparent);
+  animation: twinkle 4.5s ease-in-out infinite alternate;
+}
+
+@utility midautumn-moon {
+  position: absolute;
+  top: 4rem;
+  right: clamp(1rem, 8vw, 7rem);
+  width: clamp(7rem, 14vw, 11rem);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 38% 35%, oklch(0.96 0.05 85), oklch(0.86 0.08 75) 70%, oklch(0.7 0.1 60));
+  box-shadow:
+    0 0 60px color-mix(in oklab, var(--moon) 55%, transparent),
+    0 0 120px color-mix(in oklab, var(--moon) 30%, transparent);
+  animation: moon-float 8s ease-in-out infinite alternate;
+}
+
+@utility lantern {
+  position: absolute;
+  width: 2.6rem;
+  height: 3.4rem;
+  border-radius: 50% 50% 45% 45% / 42% 42% 58% 58%;
+  background:
+    radial-gradient(circle at 50% 42%, oklch(0.85 0.16 70), oklch(0.6 0.18 45) 78%);
+  box-shadow:
+    0 0 22px color-mix(in oklab, var(--lantern) 60%, transparent),
+    inset 0 0 10px color-mix(in oklab, #000 30%, transparent);
+  animation: lantern-float 9s ease-in-out infinite alternate;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 1.2rem;
+    background: color-mix(in oklab, var(--moon) 55%, transparent);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.6rem;
+    height: 0.7rem;
+    border-radius: 0 0 0.3rem 0.3rem;
+    background: oklch(0.42 0.13 30);
+  }
+}
+
 @utility hero-wash {
   background:
-    radial-gradient(circle at 50% 12%, color-mix(in oklab, var(--primary) 12%, transparent), transparent 33%),
-    var(--background);
+    radial-gradient(circle at 50% 12%, color-mix(in oklab, var(--primary) 14%, transparent), transparent 33%),
+    transparent;
 }
 
 @utility eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  border: 1px solid color-mix(in oklab, var(--primary) 45%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 55%, transparent);
   border-radius: 999px;
   padding: 0.38rem 0.8rem;
   color: var(--primary);
   font-size: 0.7rem;
   font-weight: 800;
+  background: color-mix(in oklab, var(--primary) 8%, transparent);
 }
 
 @utility event-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
-  border: 1px solid color-mix(in oklab, var(--primary) 45%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 50%, transparent);
   border-radius: 999px;
   padding: 0.75rem 1.25rem;
-  background: color-mix(in oklab, var(--primary) 6%, var(--background));
+  background: color-mix(in oklab, var(--primary) 10%, transparent);
   font-weight: 700;
 }
 
 @utility hero-image {
-  border: 2px solid var(--primary);
+  border: 2px solid color-mix(in oklab, var(--primary) 70%, transparent);
   border-radius: 1.2rem;
-  box-shadow: var(--shadow-orange);
+  box-shadow: var(--shadow-gold);
 }
 
 @utility cta-button {
@@ -106,31 +188,31 @@
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), oklch(0.74 0.16 60));
   padding: 0.8rem 2.5rem;
   color: var(--primary-foreground);
   font-size: 0.9rem;
   font-weight: 800;
-  box-shadow: 0 12px 30px color-mix(in oklab, var(--primary) 26%, transparent);
+  box-shadow: 0 12px 30px color-mix(in oklab, var(--primary) 30%, transparent);
   transition: transform 180ms ease, box-shadow 180ms ease;
-  &:hover { transform: translateY(-2px); box-shadow: 0 15px 34px color-mix(in oklab, var(--primary) 36%, transparent); }
-  &:focus-visible { outline: 3px solid color-mix(in oklab, var(--primary) 25%, transparent); outline-offset: 3px; }
+  &:hover { transform: translateY(-2px); box-shadow: 0 15px 34px color-mix(in oklab, var(--primary) 42%, transparent); }
+  &:focus-visible { outline: 3px solid color-mix(in oklab, var(--primary) 30%, transparent); outline-offset: 3px; }
 }
 
 @utility closed-notice {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  border: 1px solid color-mix(in oklab, var(--primary) 22%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 30%, transparent);
   border-radius: var(--radius);
-  background: color-mix(in oklab, var(--primary) 5%, var(--background));
+  background: color-mix(in oklab, var(--primary) 10%, transparent);
   padding: 0.9rem 1.25rem;
   color: var(--muted-foreground);
   font-size: 0.85rem;
 }
 
-@utility section-soft { background: var(--soft); }
-@utility community-band { background: var(--soft); }
+@utility section-soft { background: color-mix(in oklab, var(--soft) 70%, transparent); }
+@utility community-band { background: color-mix(in oklab, var(--soft) 70%, transparent); }
 @utility section-title { color: var(--primary); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.15; }
 @utility section-subtitle { margin-top: 0.65rem; color: var(--muted-foreground); font-size: 0.95rem; }
 
@@ -138,7 +220,7 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  border: 1px solid color-mix(in oklab, var(--primary) 25%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 28%, transparent);
   border-left: 3px solid var(--primary);
   border-radius: 1rem;
   background: var(--card);
@@ -153,9 +235,9 @@
   height: 2.8rem;
   flex: none;
   place-items: center;
-  border: 1px solid color-mix(in oklab, var(--primary) 35%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 40%, transparent);
   border-radius: 0.75rem;
-  background: color-mix(in oklab, var(--primary) 8%, var(--card));
+  background: color-mix(in oklab, var(--primary) 12%, var(--card));
   color: var(--primary);
 }
 
@@ -165,13 +247,26 @@
   gap: 2rem;
   border: 1px solid var(--border);
   border-radius: 1.1rem;
-  background: color-mix(in oklab, var(--primary) 3%, var(--card));
+  background: color-mix(in oklab, var(--primary) 6%, var(--card));
   padding: 2.5rem;
 }
 
 @utility speaker-label { position: absolute; right: -0.25rem; bottom: 0.2rem; border-radius: 999px; background: var(--primary); padding: 0.25rem 0.65rem; color: var(--primary-foreground); font-size: 0.7rem; font-weight: 800; }
 @utility tag { border-radius: 999px; background: var(--secondary); padding: 0.3rem 0.7rem; color: var(--secondary-foreground); font-size: 0.75rem; }
-@utility video-shell { margin-left: auto; margin-right: auto; max-width: 53rem; overflow: hidden; border: 1px solid var(--border); border-radius: 1rem; background: var(--foreground); box-shadow: var(--shadow-card); }
+@utility video-shell { margin-left: auto; margin-right: auto; max-width: 53rem; overflow: hidden; border: 1px solid var(--border); border-radius: 1rem; background: oklch(0.12 0.04 258); box-shadow: var(--shadow-card); }
+
+@keyframes twinkle {
+  from { opacity: 0.45; }
+  to { opacity: 1; }
+}
+@keyframes moon-float {
+  from { transform: translateY(0); }
+  to { transform: translateY(10px); }
+}
+@keyframes lantern-float {
+  from { transform: translateY(0) rotate(-3deg); }
+  to { transform: translateY(-14px) rotate(3deg); }
+}
 
 @media (max-width: 640px) {
   .benefit-row { align-items: flex-start; gap: 0.8rem; padding: 1rem; }
@@ -184,4 +279,5 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .cta-button { transition: none; }
+  .midautumn-stars, .midautumn-moon, .lantern { animation: none; }
 }

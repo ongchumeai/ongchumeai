@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "KOL AI Workshop" },
-      { name: "description", content: "Huấn luyện cấp tốc KOL AI cùng Phong Menly." },
+      { name: "description", content: "Huấn luyện cấp tốc KOL AI cùng Duy Hưng." },
       { name: "author", content: "KOL AI" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
