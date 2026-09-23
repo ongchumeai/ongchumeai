@@ -123,27 +123,27 @@
     0 0 22px color-mix(in oklab, var(--lantern) 60%, transparent),
     inset 0 0 10px color-mix(in oklab, #000 30%, transparent);
   animation: lantern-float 9s ease-in-out infinite alternate;
-}
-@utility lantern::before {
-  content: "";
-  position: absolute;
-  top: -0.6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 1.2rem;
-  background: color-mix(in oklab, var(--moon) 55%, transparent);
-}
-@utility lantern::after {
-  content: "";
-  position: absolute;
-  bottom: -0.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0.6rem;
-  height: 0.7rem;
-  border-radius: 0 0 0.3rem 0.3rem;
-  background: oklch(0.42 0.13 30);
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 1.2rem;
+    background: color-mix(in oklab, var(--moon) 55%, transparent);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.6rem;
+    height: 0.7rem;
+    border-radius: 0 0 0.3rem 0.3rem;
+    background: oklch(0.42 0.13 30);
+  }
 }
 
 @utility hero-wash {
