@@ -101,12 +101,8 @@ function HomePage() {
           <p className="mt-7 text-sm text-muted-foreground sm:text-base">
             <span aria-hidden="true">👉</span> Bạn muốn đứng ngoài cuộc chơi AI hay bắt đầu <strong className="text-primary">ngay hôm nay?</strong>
           </p>
-          <div className="mt-5"><CtaLink label="NHẬN VÉ & MIỄN PHÍ TÀI NGUYÊN" /></div>
-          <p className="mt-3 text-xs text-muted-foreground">Tham gia nhóm Zalo để giữ chỗ và nhận quà độc quyền</p>
-          <div className="closed-notice mt-8">
-            <strong>🚫 Đã hết thời gian đăng ký!</strong>
-            <span>Cổng đăng ký đã đóng.</span>
-          </div>
+          <div className="mt-5"><CtaLink label="ĐĂNG KÝ VÉ 50K" /></div>
+          <p className="mt-3 text-xs text-muted-foreground">Thanh toán qua QR và xác nhận nhanh qua Zalo</p>
         </div>
       </section>
 
