@@ -9,8 +9,6 @@ import {
   Wrench,
   DollarSign,
 } from "lucide-react";
-import heroAsset from "@/assets/nuoi-agent-cay-tien.png.asset.json";
-import speakerAsset from "@/assets/duy-hung.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -96,8 +94,8 @@ function HomePage() {
             <span>20:00 ngày 21/9</span>
           </div>
           <img
-            src={heroAsset.url}
-            alt="Nuôi AI Agent cày tiền cùng KOL AI"
+            src="/images/ai-trieu-do-cover.jpg"
+            alt="AI Triệu Đô - đội ngũ KOL AI Go Global"
             className="hero-image mt-7 w-full"
           />
           <p className="mt-7 text-sm text-muted-foreground sm:text-base">
@@ -139,7 +137,7 @@ function HomePage() {
           <h2 className="section-title text-center">Diễn giả Huấn luyện cấp tốc</h2>
           <article className="speaker-panel mt-11">
             <div className="relative shrink-0">
-              <img src={speakerAsset.url} alt="Duy Hưng" className="size-32 rounded-full object-cover sm:size-36" />
+              <img src="/images/ong-chu-me-ai-avatar.jpg" alt="Duy Hưng - Ông Chủ Mê AI" className="size-32 rounded-full object-cover sm:size-36" />
               <span className="speaker-label">KOL AI</span>
             </div>
             <div>
