@@ -1,12 +1,8 @@
 # Task roadmap
 
 ## Done
-- [x] Thay mặt cô gái trong ảnh hero bằng ảnh chân dung của người dùng (face-swap + inpaint giữ text terminal; asset pointer nuoi-agent-cay-tien.png.asset.json đã cập nhật)
+- [x] Thay mặt cô gái trong ảnh hero bằng ảnh chân dung của người dùng
 - [x] Thay ảnh Phong Menly → Duy Hưng
-
-## In progress
-- [ ] Xác minh trang chủ hiển thị ảnh hero mới qua Playwright
-
-## Open
-- [ ] Đổi màu trang thành navy blue (xanh navy) — cập nhật src/styles.css tokens + components
-- [ ] Thêm hiệu ứng Trung Thu (đèn lồng, trăng, hoa đăng, ngân hà, animation)
+- [x] Đổi màu trang thành navy blue (nền navy + accent vàng, CTA gradient vàng-cam)
+- [x] Thêm hiệu ứng Trung Thu (trăng rằm, sao lấp lánh, đèn lồng trôi nổi) cho trang chủ & đăng ký
+- [x] Kiểm tra Playwright desktop + mobile — hiển thị đúng, không vỡ layout
