@@ -10,7 +10,7 @@ import {
   DollarSign,
 } from "lucide-react";
 import heroAsset from "@/assets/nuoi-agent-cay-tien.png.asset.json";
-import speakerAsset from "@/assets/phong-menly.png.asset.json";
+import speakerAsset from "@/assets/duy-hung.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Huấn luyện cấp tốc cùng Phong Menly: xây đội AI Agent, phát triển skill và ứng dụng AI vào công việc.",
+          "Huấn luyện cấp tốc cùng Duy Hưng: xây đội AI Agent, phát triển skill và ứng dụng AI vào công việc.",
       },
       { property: "og:title", content: "Nuôi Agent Cày Thay Mình 24/7" },
       {
@@ -134,11 +134,11 @@ function HomePage() {
           <h2 className="section-title text-center">Diễn giả Huấn luyện cấp tốc</h2>
           <article className="speaker-panel mt-11">
             <div className="relative shrink-0">
-              <img src={speakerAsset.url} alt="Phong Menly" className="size-32 rounded-full object-cover sm:size-36" />
+              <img src={speakerAsset.url} alt="Duy Hưng" className="size-32 rounded-full object-cover sm:size-36" />
               <span className="speaker-label">KOL AI</span>
             </div>
             <div>
-              <h3 className="text-3xl font-black">Phong Menly</h3>
+              <h3 className="text-3xl font-black">Duy Hưng</h3>
               <p className="mt-1 font-semibold text-primary">KOL AI &amp; Vibe Coding</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {['AI Expert', 'Content Creator', 'Vibe Coding'].map((tag) => <span className="tag" key={tag}>{tag}</span>)}
@@ -150,13 +150,13 @@ function HomePage() {
           </article>
 
           <header className="mt-24 text-center">
-            <h2 className="text-2xl font-black sm:text-3xl">🎬 Xem trước nội dung từ Phong Menly</h2>
+            <h2 className="text-2xl font-black sm:text-3xl">🎬 Xem trước nội dung từ Duy Hưng</h2>
             <p className="mt-2 text-muted-foreground">Video chia sẻ thực tế giúp bạn hiểu rõ hơn về hành trình KOL AI</p>
           </header>
           <div className="video-shell mt-9">
             <iframe
               src="https://www.youtube.com/embed/K2H9p7IGhdo"
-              title="KOL AI Marketing - Phong Menly"
+              title="KOL AI Marketing - Duy Hưng"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               className="aspect-video w-full"

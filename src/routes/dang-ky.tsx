@@ -6,7 +6,7 @@ export const Route = createFileRoute("/dang-ky")({
   head: () => ({
     meta: [
       { title: "Đăng Ký Nhận Vé | KOL AI Workshop" },
-      { name: "description", content: "Đăng ký vé tham gia huấn luyện cấp tốc KOL AI cùng Phong Menly." },
+      { name: "description", content: "Đăng ký vé tham gia huấn luyện cấp tốc KOL AI cùng Duy Hưng." },
       { property: "og:title", content: "Đăng Ký Nhận Vé KOL AI Workshop" },
       { property: "og:description", content: "Nhận vé, tài liệu, phần hỏi đáp trực tiếp và bản phát lại trong 7 ngày." },
       { property: "og:type", content: "website" },
